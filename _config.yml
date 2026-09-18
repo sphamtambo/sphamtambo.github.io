@@ -1,0 +1,19 @@
+title: Sphamandla Mtambo
+description: Notes on machine learning, cheminformatics, and drug discovery.
+theme: minima
+minima:
+  skin: classic
+  social_links:
+    - { platform: github, user_url: "https://github.com/sphamtambo" }
+
+permalink: /:title/
+show_excerpts: true
+
+collections:
+  tutorials:
+    output: true
+    permalink: /tutorials/:path/
+
+header_pages:
+  - tutorials.md
+  - blog.md

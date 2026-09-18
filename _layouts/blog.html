@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<ul class="post-list">
+  {%- for post in site.posts -%}
+  <li>
+    <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+    {%- assign words = post.content | number_of_words -%}
+    {%- assign minutes = words | divided_by: 200 -%}
+    {%- if minutes < 1 -%}{%- assign minutes = 1 -%}{%- endif -%}
+    <p class="post-meta">{{ minutes }} minute read &middot; Published: {{ post.date | date: "%B %-d, %Y" }}</p>
+    {%- if post.image -%}
+    <img src="{{ post.image | relative_url }}" alt="" class="post-thumb">
+    {%- endif -%}
+  </li>
+  {%- endfor -%}
+</ul>
